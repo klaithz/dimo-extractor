@@ -16,6 +16,14 @@ function scriptDirectory() {
 }
 
 function pythonScriptPath() {
+  const bundledPath = $.NSBundle.mainBundle.pathForResourceOfType(
+    $("extract_dimo_quotes"),
+    $("py")
+  );
+  if (bundledPath) {
+    return ObjC.unwrap(bundledPath);
+  }
+
   return scriptDirectory() + "/extract_dimo_quotes.py";
 }
 
@@ -32,7 +40,9 @@ function joinLines(lines) {
 }
 
 function run() {
-  currentApp().displayDialog("请把一个或多个滴墨书摘导出的 .txt 文件拖到这个应用上。");
+  currentApp().displayDialog(
+    "请把一个或多个滴墨书摘导出的 .txt 文件拖到这个应用上。"
+  );
 }
 
 function openDocuments(droppedItems) {

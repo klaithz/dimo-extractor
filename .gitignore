@@ -1,5 +1,7 @@
 .DS_Store
+dist/
 tmp test/
 *.pyc
 __pycache__/
 a.scpt
+Drag TXT Here.app/
