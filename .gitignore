@@ -1,0 +1,5 @@
+.DS_Store
+tmp test/
+*.pyc
+__pycache__/
+a.scpt
